@@ -8,13 +8,21 @@ import { ACTIVITIES } from '../mock-activities';
   styleUrls: ['./activities.component.css']
 })
 export class ActivitiesComponent implements OnInit {
+ 
+  activities = ACTIVITIES;
 
-  activity = ACTIVITIES;
-  
+  selectedActivity: Activity;
 
-  constructor() {}
+  constructor() {
+    console.log(ACTIVITIES);
+  }
 
   ngOnInit() {
   }
+
+  onSelect(activity: Activity): void {
+    this.selectedActivity = activity;
+  }
+  
 
 }

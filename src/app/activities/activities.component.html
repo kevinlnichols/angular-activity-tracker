@@ -1,17 +1,17 @@
 <h2>My Activities</h2>
-<ul class="activity">
-  <li *ngFor="let activity of activities">
+<ul class="activities">
+  <li *ngFor="let activity of activities" (click)="onSelect(activity)" [class.selected]="activity === selectedActivity" >
     <span class="bold">{{activity.id}}</span> {{activity.activityName}}
   </li>
 </ul>
 
-<h2>{{activity.activityName | uppercase}} Details</h2>
-<div>
-  <span>id: </span>{{activity.id}}</div>
-<div>
-  <span>Activity: </span>{{activity.activityName}}</div>
-<div>
-  <label>Name:
-    <input [(ngModel)]="activity.activityName" placeholder="Activity Name">
-  </label>
+<div *ngIf="selectedActivity">
+  <h2>{{selectedActivity.activityName | uppercase}} Details</h2>
+  <div>
+    <span>id: </span>{{selectedActivity.id}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="selectedActivity.activityName" placeholder="Activity Name">
+    </label>
+  </div>
 </div>
