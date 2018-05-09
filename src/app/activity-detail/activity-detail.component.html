@@ -1,0 +1,10 @@
+<div *ngIf="activity">
+  <h2>{{activity.activityName | uppercase}} Details</h2>
+  <div>
+    <span>id: </span>{{activity.id}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="activity.activityName" placeholder="Activity Name">
+    </label>
+  </div>
+</div>

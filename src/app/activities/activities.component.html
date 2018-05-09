@@ -5,13 +5,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedActivity">
-  <h2>{{selectedActivity.activityName | uppercase}} Details</h2>
-  <div>
-    <span>id: </span>{{selectedActivity.id}}</div>
-  <div>
-    <label>Name:
-      <input [(ngModel)]="selectedActivity.activityName" placeholder="Activity Name">
-    </label>
-  </div>
-</div>
+<app-activity-detail [activity]="selectedActivity" ></app-activity-detail>
