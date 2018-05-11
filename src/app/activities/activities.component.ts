@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity } from '../activity';
-import { ACTIVITIES } from '../mock-activities';
+import { ActivityService } from '../activity.service';
+
 
 @Component({
   selector: 'app-activities',
@@ -8,20 +9,26 @@ import { ACTIVITIES } from '../mock-activities';
   styleUrls: ['./activities.component.css']
 })
 export class ActivitiesComponent implements OnInit {
- 
-  activities = ACTIVITIES;
 
   selectedActivity: Activity;
+ 
+  activities: Activity[];
 
-  constructor() {
-    console.log(ACTIVITIES);
+  constructor(private activityService: ActivityService) {
+    
   }
 
   ngOnInit() {
+    this.getActivities();
   }
 
   onSelect(activity: Activity): void {
     this.selectedActivity = activity;
+  }
+
+  getActivities(): void {
+    this.activityService.getActivities()
+      .subscribe(activities => this.activities = activities);
   }
   
 

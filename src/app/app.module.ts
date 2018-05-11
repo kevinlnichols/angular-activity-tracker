@@ -6,13 +6,15 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { ActivityDetailComponent } from './activity-detail/activity-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ActivitiesComponent,
-    ActivityDetailComponent
+    ActivityDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
